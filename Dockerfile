@@ -4,7 +4,7 @@ FROM adoptopenjdk:11-jre-hotspot
 # Set the working directory
 WORKDIR /app
 # Copy the JAR file to the container
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+COPY ./target/demo-0.0.1-SNAPSHOT.jar app.jar
 # Expose the port that your Spring Boot application listens on (default is 8080)
 EXPOSE 8080
 # Define the command to run your application
