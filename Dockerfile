@@ -10,7 +10,7 @@ WORKDIR /app
 COPY ./pom.xml ./
 #build app
 RUN mvn clean package -DskipTests
-RUN ls
+RUN ls target
 # Copy the JAR file to the container
 COPY /app/target/*.jar /app.jar
 # Expose the port that your Spring Boot application listens on (default is 8080)
