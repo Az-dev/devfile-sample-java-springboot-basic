@@ -12,9 +12,10 @@ COPY ./pom.xml ./
 RUN mvn clean package -DskipTests
 RUN ls target
 RUN chmod -R 777 target/
+RUN chmod -R 777 target/demo-0.0.1-SNAPSHOT.jar
 # Copy the JAR file to the container
-COPY ./target/demo-0.0.1-SNAPSHOT.jar app.jar
+COPY target/demo-0.0.1-SNAPSHOT.jar /opt/demo-app.jar    
 # Expose the port that your Spring Boot application listens on (default is 8080)
 EXPOSE 8080
 # Define the command to run your application
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "/opt/demo-app.jar"]
